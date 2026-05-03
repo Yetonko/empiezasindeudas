@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="¿Tienes deudas, estás en ASNEF o te han denegado un préstamo? Te ayudamos a recuperar tu situación financiera. Diagnóstico gratuito y confidencial." />
+  <title>Empieza Sin Deudas | Segunda Oportunidad Financiera</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════════
+       RESET & BASE
+    ═══════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1B3A5C;
+      --navy-d:  #122840;
+      --blue:    #2E75B6;
+      --blue-l:  #D5E8F7;
+      --green:   #27AE60;
+      --gold:    #F39C12;
+      --white:   #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100:#F1F5F9;
+      --gray-200:#E2E8F0;
+      --gray-500:#64748B;
+      --gray-700:#334155;
+      --text:    #1A1A2E;
+      --radius:  12px;
+      --shadow:  0 4px 24px rgba(27,58,92,0.10);
+      --shadow-lg: 0 8px 40px rgba(27,58,92,0.16);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ═══════════════════════════════════════════
+       BUTTONS
+    ═══════════════════════════════════════════ */
+    .btn {
+      display: inline-block;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: var(--white);
+    }
+    .btn-primary:hover { background: #219150; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(39,174,96,0.35); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.6);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+    .btn-navy {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .btn-navy:hover { background: var(--navy-d); transform: translateY(-2px); }
+
+    /* ═══════════════════════════════════════════
+       NAVBAR
+    ═══════════════════════════════════════════ */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(27, 58, 92, 0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .navbar-logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.5px;
+    }
+    .navbar-logo span { color: #5BC8F5; }
+
+    .navbar-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .navbar-links a {
+      color: rgba(255,255,255,0.80);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .navbar-links a:hover { color: var(--white); }
+
+    .navbar-cta {
+      background: var(--green);
+      color: var(--white);
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    .navbar-cta:hover { background: #219150; transform: translateY(-1px); }
+
+    .navbar-phone {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .navbar-phone svg { opacity: 0.7; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: white;
+      margin: 5px 0;
+      transition: all 0.3s;
+    }
+
+    .mobile-menu {
+      display: none;
+      background: var(--navy-d);
+      padding: 20px 24px;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .mobile-menu a {
+      color: rgba(255,255,255,0.85);
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .mobile-menu.open { display: flex; }
+
+    /* ═══════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════ */
+    .hero {
+      background: linear-gradient(135deg, var(--navy-d) 0%, var(--navy) 50%, #1a4a7a 100%);
+      padding: 140px 0 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(46,117,182,0.3) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%; left: -10%;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(39,174,96,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(39,174,96,0.18);
+      border: 1px solid rgba(39,174,96,0.4);
+      color: #5eda9a;
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: #5BC8F5;
+    }
+
+    .hero-sub {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .hero-trust {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.65);
+      font-size: 0.85rem;
+    }
+
+    .hero-trust-item svg { flex-shrink: 0; }
+
+    /* Hero card */
+    .hero-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 32px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card-title {
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-card-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .hero-card-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+
+    .hero-card-text strong {
+      display: block;
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .hero-card-text span {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.8rem;
+    }
+
+    .hero-card-cta {
+      margin-top: 24px;
+      background: var(--green);
+      color: white;
+      padding: 14px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 700;
+      cursor: pointer;
+      display: block;
+      transition: all 0.2s;
+    }
+    .hero-card-cta:hover { background: #219150; transform: translateY(-1px); }
+
+    /* ═══════════════════════════════════════════
+       STATS BAR
+    ═══════════════════════════════════════════ */
+    .stats-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 28px 0;
+      box-shadow: var(--shadow);
+    }
+
+    .stats-inner {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      margin-top: 4px;
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 40px;
+      background: var(--gray-200);
+    }
+
+    /* ═══════════════════════════════════════════
+       SECTION COMMONS
+    ═══════════════════════════════════════════ */
+    section { padding: 80px 0; }
+
+    .section-label {
+      display: inline-block;
+      background: var(--blue-l);
+      color: var(--blue);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      max-width: 580px;
+      line-height: 1.7;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-header .section-sub {
+      margin: 0 auto;
+    }
+
+    /* ═══════════════════════════════════════════
+       PERFILES
+    ═══════════════════════════════════════════ */
+    .perfiles { background: var(--gray-50); }
+
+    .perfiles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .perfil-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px;
+      border: 1px solid var(--gray-200);
+      transition: all 0.3s ease;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .perfil-card:hover {
+      border-color: var(--blue);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+
+    .perfil-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .perfil-body h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .perfil-body p {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .perfil-tag {
+      display: inline-block;
+      background: var(--blue-l);
+      color: var(--blue);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    /* ═══════════════════════════════════════════
+       COMO FUNCIONA
+    ═══════════════════════════════════════════ */
+    .como-funciona { background: var(--white); }
+
+    .pasos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      position: relative;
+    }
+
+    .pasos-grid::before {
+      content: '';
+      position: absolute;
+      top: 32px;
+      left: calc(16.66% + 16px);
+      right: calc(16.66% + 16px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue-l), var(--blue), var(--blue-l));
+    }
+
+    .paso-card {
+      text-align: center;
+      padding: 32px 20px;
+      position: relative;
+    }
+
+    .paso-number {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 16px rgba(27,58,92,0.3);
+    }
+
+    .paso-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .paso-card p {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      line-height: 1.65;
+    }
+
+    .paso-time {
+      display: inline-block;
+      margin-top: 12px;
+      background: var(--gray-100);
+      color: var(--gray-700);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+
+    /* ═══════════════════════════════════════════
+       TESTIMONIOS
+    ═══════════════════════════════════════════ */
+    .testimonios { background: var(--gray-50); }
+
+    .testimonios-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonio-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px;
+      border: 1px solid var(--gray-200);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .testimonio-stars {
+      color: var(--gold);
+      font-size: 1rem;
+      letter-spacing: 2px;
+    }
+
+    .testimonio-text {
+      font-size: 0.95rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+      font-style: italic;
+      flex: 1;
+    }
+
+    .testimonio-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .testimonio-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue-l), var(--navy));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .testimonio-info strong {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .testimonio-info span {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+    }
+
+    /* ═══════════════════════════════════════════
+       FORMULARIO
+    ═══════════════════════════════════════════ */
+    .formulario {
+      background: linear-gradient(135deg, var(--navy-d) 0%, var(--navy) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .formulario::before {
+      content: '';
+      position: absolute;
+      top: -40%; right: -15%;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(46,117,182,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .formulario-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    .formulario-left h2 {
+      color: var(--white);
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .formulario-left p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .form-garantias {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .form-garantia {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.9rem;
+    }
+
+    .form-garantia-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(39,174,96,0.25);
+      border: 1px solid rgba(39,174,96,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      color: #5eda9a;
+    }
+
+    /* Form box */
+    .form-box {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 36px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .form-box-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .form-box-sub {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 6px;
+    }
+
+    .form-group label span {
+      color: #e74c3c;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(46,117,182,0.12);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 90px; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--green);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 8px;
+    }
+    .form-submit:hover { background: #219150; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(39,174,96,0.35); }
+
+    .form-rgpd {
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .form-rgpd input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      accent-color: var(--blue);
+    }
+
+    .form-rgpd label {
+      font-size: 0.78rem;
+      color: var(--gray-500);
+      line-height: 1.5;
+    }
+
+    .form-rgpd a { color: var(--blue); text-decoration: underline; }
+
+    /* ═══════════════════════════════════════════
+       URGENCIA / CTA FLOTANTE
+    ═══════════════════════════════════════════ */
+    .urgencia {
+      background: var(--white);
+      padding: 60px 0;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .urgencia-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .urgencia-text h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .urgencia-text p {
+      color: var(--gray-500);
+      font-size: 1rem;
+    }
+
+    .urgencia-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .urgencia-phone {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
+    .footer {
+      background: var(--navy-d);
+      color: rgba(255,255,255,0.65);
+      padding: 56px 0 32px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .footer-brand span { color: #5BC8F5; }
+
+    .footer-desc {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-contact a {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+    .footer-contact a:hover { color: #5BC8F5; }
+
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-bottom {
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.8rem;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-legal a { color: rgba(255,255,255,0.45); transition: color 0.2s; }
+    .footer-legal a:hover { color: var(--white); }
+
+    /* ═══════════════════════════════════════════
+       FLOATING PHONE BUTTON (mobile)
+    ═══════════════════════════════════════════ */
+    .float-phone {
+      display: none;
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      background: var(--green);
+      color: white;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(39,174,96,0.5);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .float-phone:hover { transform: scale(1.1); }
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media (max-width: 960px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .perfiles-grid { grid-template-columns: 1fr; }
+      .pasos-grid { grid-template-columns: 1fr; }
+      .pasos-grid::before { display: none; }
+      .testimonios-grid { grid-template-columns: 1fr; }
+      .formulario-inner { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .urgencia-inner { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 640px) {
+      section { padding: 60px 0; }
+      .hero { padding: 120px 0 60px; }
+      .navbar-links { display: none; }
+      .navbar-cta { display: none; }
+      .navbar-phone { display: none; }
+      .hamburger { display: block; }
+      .stat-divider { display: none; }
+      .stats-inner { gap: 16px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .float-phone { display: flex; }
+    }
+
+    /* ═══════════════════════════════════════════
+       ANIMATIONS
+    ═══════════════════════════════════════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up {
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .fade-up-delay-1 { animation-delay: 0.1s; }
+    .fade-up-delay-2 { animation-delay: 0.2s; }
+    .fade-up-delay-3 { animation-delay: 0.3s; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="#" class="navbar-logo">Empieza<span>Sin</span>Deudas</a>
+
+        <ul class="navbar-links">
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#perfiles">Tu situación</a></li>
+          <li><a href="#testimonios">Casos reales</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+
+        <div style="display:flex; align-items:center; gap:20px;">
+          <a href="tel:931180854" class="navbar-phone">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+            93 118 08 54
+          </a>
+          <a href="#formulario" class="navbar-cta">Diagnóstico gratuito</a>
+          <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menú">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-menu">
+      <a href="#como-funciona" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Cómo funciona</a>
+      <a href="#perfiles" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Tu situación</a>
+      <a href="#testimonios" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Casos reales</a>
+      <a href="#formulario" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Diagnóstico gratuito</a>
+      <a href="tel:931180854" style="color:#5eda9a; font-weight:700;">📞 93 118 08 54</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-badge fade-up">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="#5eda9a"><circle cx="5" cy="5" r="5"/></svg>
+            Consultas disponibles hoy
+          </div>
+          <h1 class="fade-up fade-up-delay-1">
+            Tu segunda oportunidad<br />financiera <em>empieza hoy</em>
+          </h1>
+          <p class="hero-sub fade-up fade-up-delay-2">
+            ¿Estás en ASNEF, con deudas impagadas o te han denegado crédito? No estás solo.
+            Te ayudamos a recuperar tu situación de forma confidencial y sin complicaciones.
+          </p>
+          <div class="hero-actions fade-up fade-up-delay-2">
+            <a href="#formulario" class="btn btn-primary">Diagnóstico gratuito →</a>
+            <a href="tel:931180854" class="btn btn-secondary">📞 93 118 08 54</a>
+          </div>
+          <div class="hero-trust fade-up fade-up-delay-3">
+            <div class="hero-trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5eda9a" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              100% confidencial
+            </div>
+            <div class="hero-trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5eda9a" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Sin compromiso
+            </div>
+            <div class="hero-trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5eda9a" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Respuesta en 2 horas
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card fade-up fade-up-delay-2">
+          <p class="hero-card-title">¿En cuál de estas situaciones estás?</p>
+
+          <div class="hero-card-item">
+            <div class="hero-card-icon" style="background:rgba(231,76,60,0.15);">🚫</div>
+            <div class="hero-card-text">
+              <strong>Ficheros de morosos (ASNEF/RAI)</strong>
+              <span>Apareces en un listado y no puedes acceder a servicios ni crédito</span>
+            </div>
+          </div>
+
+          <div class="hero-card-item">
+            <div class="hero-card-icon" style="background:rgba(243,156,18,0.15);">🏦</div>
+            <div class="hero-card-text">
+              <strong>Rechazado por el banco</strong>
+              <span>Te han denegado un préstamo o hipoteca sin explicación clara</span>
+            </div>
+          </div>
+
+          <div class="hero-card-item">
+            <div class="hero-card-icon" style="background:rgba(46,117,182,0.15);">📊</div>
+            <div class="hero-card-text">
+              <strong>Deuda elevada en CIRBE</strong>
+              <span>Tu nivel de riesgo en el Banco de España bloquea tu capacidad financiera</span>
+            </div>
+          </div>
+
+          <div class="hero-card-item">
+            <div class="hero-card-icon" style="background:rgba(39,174,96,0.15);">⚖️</div>
+            <div class="hero-card-text">
+              <strong>Ley de Segunda Oportunidad</strong>
+              <span>Eres autónomo o empresario con deudas que quieres cancelar legalmente</span>
+            </div>
+          </div>
+
+          <a href="#formulario" class="hero-card-cta">Recibe tu diagnóstico gratuito →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       STATS BAR
+  ═══════════════════════════════════════════ -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-inner">
+        <div class="stat-item">
+          <div class="stat-number">+500</div>
+          <div class="stat-label">Casos resueltos</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">97%</div>
+          <div class="stat-label">Clientes satisfechos</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">&lt;2h</div>
+          <div class="stat-label">Tiempo de respuesta</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">15 años</div>
+          <div class="stat-label">De experiencia</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">Gratis</div>
+          <div class="stat-label">Primera consulta</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       PERFILES
+  ═══════════════════════════════════════════ -->
+  <section class="perfiles" id="perfiles">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Tu situación</span>
+        <h2 class="section-title">Tenemos solución para cada perfil</h2>
+        <p class="section-sub">
+          Cada situación financiera es única. Identificamos tu caso y te ofrecemos
+          el camino más directo y eficaz hacia la solución.
+        </p>
+      </div>
+
+      <div class="perfiles-grid">
+        <div class="perfil-card">
+          <div class="perfil-icon" style="background:#fef2f2;">🚫</div>
+          <div class="perfil-body">
+            <h3>Ficheros de morosos</h3>
+            <p>Estás en ASNEF, RAI o BADEXCUG y esto te impide acceder a crédito, alquiler o incluso contratar servicios básicos.</p>
+            <span class="perfil-tag">Solución en 30-60 días</span>
+          </div>
+        </div>
+
+        <div class="perfil-card">
+          <div class="perfil-icon" style="background:#fff7ed;">🏦</div>
+          <div class="perfil-body">
+            <h3>Rechazado por bancos</h3>
+            <p>Has solicitado un préstamo, hipoteca o tarjeta y te lo han denegado. Existen vías de financiación alternativa que los bancos no te ofrecen.</p>
+            <span class="perfil-tag">Financiación alternativa</span>
+          </div>
+        </div>
+
+        <div class="perfil-card">
+          <div class="perfil-icon" style="background:#eff6ff;">📊</div>
+          <div class="perfil-body">
+            <h3>Riesgo elevado en CIRBE</h3>
+            <p>Tu nivel de endeudamiento en el Banco de España está al límite o superado. Te ayudamos a reestructurarlo para recuperar tu capacidad financiera.</p>
+            <span class="perfil-tag">Reestructuración de deuda</span>
+          </div>
+        </div>
+
+        <div class="perfil-card">
+          <div class="perfil-icon" style="background:#f0fdf4;">⚖️</div>
+          <div class="perfil-body">
+            <h3>Ley de Segunda Oportunidad</h3>
+            <p>Eres autónomo o persona física con deudas que no puedes asumir. La LSO te permite cancelarlas legalmente y empezar de cero.</p>
+            <span class="perfil-tag">Exoneración de deudas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       COMO FUNCIONA
+  ═══════════════════════════════════════════ -->
+  <section class="como-funciona" id="como-funciona">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">El proceso</span>
+        <h2 class="section-title">Tres pasos para recuperar tu libertad financiera</h2>
+        <p class="section-sub">
+          Un proceso claro, sin sorpresas y completamente confidencial.
+          Tú te centras en tu vida, nosotros nos encargamos del resto.
+        </p>
+      </div>
+
+      <div class="pasos-grid">
+        <div class="paso-card">
+          <div class="paso-number">1</div>
+          <h3>Diagnóstico gratuito</h3>
+          <p>Rellenas un formulario sencillo con tu situación. En menos de 2 horas un especialista analiza tu caso y te llama con un plan concreto.</p>
+          <span class="paso-time">⏱ 5 minutos</span>
+        </div>
+
+        <div class="paso-card">
+          <div class="paso-number">2</div>
+          <h3>Plan personalizado</h3>
+          <p>Te presentamos las opciones disponibles para tu perfil, con plazos, costes y probabilidad de éxito estimados. Sin letra pequeña.</p>
+          <span class="paso-time">⏱ 24-48 horas</span>
+        </div>
+
+        <div class="paso-card">
+          <div class="paso-number">3</div>
+          <h3>Gestión y resolución</h3>
+          <p>Nuestro equipo gestiona todo el proceso por ti. Tú recibes informes de avance periódicos hasta la resolución completa de tu caso.</p>
+          <span class="paso-time">⏱ 30-90 días</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       TESTIMONIOS
+  ═══════════════════════════════════════════ -->
+  <section class="testimonios" id="testimonios">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Casos reales</span>
+        <h2 class="section-title">Personas que ya empezaron de cero</h2>
+        <p class="section-sub">
+          Nombres cambiados para proteger la privacidad. Los detalles son reales.
+        </p>
+      </div>
+
+      <div class="testimonios-grid">
+        <div class="testimonio-card">
+          <div class="testimonio-stars">★★★★★</div>
+          <p class="testimonio-text">
+            "Llevaba 3 años en ASNEF y no podía ni abrir una cuenta nueva. En menos de 45 días
+            me ayudaron a salir del fichero y a acceder a financiación que creía imposible.
+            No pensé que fuera tan rápido."
+          </p>
+          <div class="testimonio-author">
+            <div class="testimonio-avatar">M.R.</div>
+            <div class="testimonio-info">
+              <strong>M.R., 42 años</strong>
+              <span>Autónomo · Barcelona</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonio-card">
+          <div class="testimonio-stars">★★★★★</div>
+          <p class="testimonio-text">
+            "Me habían rechazado en 4 bancos distintos para una hipoteca. Pensé que nunca
+            podría tener casa propia. Con su ayuda encontré financiación alternativa y firmé
+            la escritura tres meses después."
+          </p>
+          <div class="testimonio-author">
+            <div class="testimonio-avatar">A.G.</div>
+            <div class="testimonio-info">
+              <strong>A.G., 35 años</strong>
+              <span>Empleada · Valencia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonio-card">
+          <div class="testimonio-stars">★★★★★</div>
+          <p class="testimonio-text">
+            "Cerré mi empresa con 60.000€ de deuda. La Ley de Segunda Oportunidad me parecía
+            algo complicadísimo, pero lo gestionaron todo ellos. Hoy estoy exonerado y
+            volviendo a trabajar con tranquilidad."
+          </p>
+          <div class="testimonio-author">
+            <div class="testimonio-avatar">J.L.</div>
+            <div class="testimonio-info">
+              <strong>J.L., 51 años</strong>
+              <span>Ex-empresario · Madrid</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FORMULARIO
+  ═══════════════════════════════════════════ -->
+  <section class="formulario" id="formulario">
+    <div class="container">
+      <div class="formulario-inner">
+        <div class="formulario-left">
+          <span class="section-label" style="background:rgba(91,200,245,0.15); color:#5BC8F5;">Diagnóstico gratuito</span>
+          <h2>Cuéntanos tu situación.<br />Te llamamos en menos de 2 horas.</h2>
+          <p>
+            Sin compromiso, sin costes y con total confidencialidad.
+            Analizamos tu caso y te explicamos exactamente qué opciones tienes.
+          </p>
+
+          <div class="form-garantias">
+            <div class="form-garantia">
+              <div class="form-garantia-icon">✓</div>
+              Primera consulta completamente gratuita
+            </div>
+            <div class="form-garantia">
+              <div class="form-garantia-icon">✓</div>
+              Tus datos nunca se comparten con terceros
+            </div>
+            <div class="form-garantia">
+              <div class="form-garantia-icon">✓</div>
+              Asesor especializado para tu perfil concreto
+            </div>
+            <div class="form-garantia">
+              <div class="form-garantia-icon">✓</div>
+              Respuesta garantizada en menos de 2 horas laborables
+            </div>
+          </div>
+        </div>
+
+        <div class="form-box">
+          <p class="form-box-title">Solicita tu diagnóstico gratuito</p>
+          <p class="form-box-sub">Rellena el formulario y te llamamos sin coste ni compromiso</p>
+
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre <span>*</span></label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+              </div>
+              <div class="form-group">
+                <label for="apellidos">Apellidos <span>*</span></label>
+                <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="telefono">Teléfono <span>*</span></label>
+              <input type="tel" id="telefono" name="telefono" placeholder="6XX XXX XXX" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email <span>*</span></label>
+              <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="situacion">¿Cuál es tu situación principal? <span>*</span></label>
+              <select id="situacion" name="situacion" required>
+                <option value="">Selecciona tu caso...</option>
+                <option value="asnef">Estoy en ASNEF / RAI / fichero de morosos</option>
+                <option value="rechazado">Me han rechazado un préstamo o hipoteca</option>
+                <option value="cirbe">Tengo riesgo elevado en CIRBE</option>
+                <option value="lso">Quiero acogerse a la Ley de Segunda Oportunidad</option>
+                <option value="otro">Otra situación de deuda</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje">Cuéntanos brevemente tu caso (opcional)</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Describe brevemente tu situación para poder preparar mejor tu consulta..."></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">
+              Solicitar diagnóstico gratuito →
+            </button>
+
+            <div class="form-rgpd">
+              <input type="checkbox" id="rgpd" name="rgpd" required />
+              <label for="rgpd">
+                He leído y acepto la <a href="/privacidad">Política de Privacidad</a>.
+                Consiento el tratamiento de mis datos para recibir información sobre los servicios solicitados.
+              </label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       URGENCIA / CTA
+  ═══════════════════════════════════════════ -->
+  <section class="urgencia" id="contacto">
+    <div class="container">
+      <div class="urgencia-inner">
+        <div class="urgencia-text">
+          <h2>¿Prefieres llamarnos directamente?</h2>
+          <p>Nuestro equipo atiende consultas de lunes a viernes de 9h a 19h.</p>
+        </div>
+        <div class="urgencia-actions">
+          <div class="urgencia-phone">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" color="#1B3A5C"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+            <a href="tel:931180854">93 118 08 54</a>
+          </div>
+          <a href="#formulario" class="btn btn-navy">O déjanos tus datos →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Empieza<span>Sin</span>Deudas</div>
+          <p class="footer-desc">
+            Despacho especializado en soluciones financieras de segunda oportunidad.
+            Ayudamos a personas y autónomos a recuperar su libertad financiera
+            con discreción, rapidez y resultados reales.
+          </p>
+          <div class="footer-contact">
+            <a href="tel:931180854">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+              93 118 08 54
+            </a>
+            <a href="mailto:info@empiezasindeudas.com">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              info@empiezasindeudas.com
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <ul class="footer-links">
+            <li><a href="#perfiles">Salida de ASNEF/RAI</a></li>
+            <li><a href="#perfiles">Financiación alternativa</a></li>
+            <li><a href="#perfiles">Reestructuración CIRBE</a></li>
+            <li><a href="#perfiles">Ley Segunda Oportunidad</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul class="footer-links">
+            <li><a href="#como-funciona">Cómo funciona</a></li>
+            <li><a href="#testimonios">Casos de éxito</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#formulario">Diagnóstico gratuito</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="/privacidad">Política de privacidad</a></li>
+            <li><a href="/aviso-legal">Aviso legal</a></li>
+            <li><a href="/cookies">Política de cookies</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 EmpiezaSinDeudas. Todos los derechos reservados.</span>
+        <div class="footer-legal">
+          <a href="/privacidad">Privacidad</a>
+          <a href="/aviso-legal">Aviso legal</a>
+          <a href="/cookies">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón flotante móvil -->
+  <a href="tel:931180854" class="float-phone" aria-label="Llamar">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+  </a>
+
+  <script>
+    // Form submission handler
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form-submit');
+      btn.textContent = '✓ Solicitud enviada — te llamamos pronto';
+      btn.style.background = '#1B3A5C';
+      btn.disabled = true;
+
+      // Aquí se conectará con Make/Zapier en la Fase 2
+      console.log('Lead capturado:', {
+        nombre: document.getElementById('nombre').value,
+        apellidos: document.getElementById('apellidos').value,
+        telefono: document.getElementById('telefono').value,
+        email: document.getElementById('email').value,
+        situacion: document.getElementById('situacion').value,
+        mensaje: document.getElementById('mensaje').value
+      });
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
