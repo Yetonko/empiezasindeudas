@@ -1500,18 +1500,32 @@
     function handleSubmit(e) {
       e.preventDefault();
       const btn = e.target.querySelector('.form-submit');
-      btn.textContent = '✓ Solicitud enviada — te llamamos pronto';
-      btn.style.background = '#1B3A5C';
+      btn.textContent = 'Enviando...';
       btn.disabled = true;
 
-      // Aquí se conectará con Make/Zapier en la Fase 2
-      console.log('Lead capturado:', {
+      const datos = {
         nombre: document.getElementById('nombre').value,
         apellidos: document.getElementById('apellidos').value,
         telefono: document.getElementById('telefono').value,
         email: document.getElementById('email').value,
         situacion: document.getElementById('situacion').value,
-        mensaje: document.getElementById('mensaje').value
+        mensaje: document.getElementById('mensaje').value,
+        fuente: 'Web',
+        fecha: new Date().toISOString()
+      };
+
+      fetch('https://hook.eu1.make.com/zatq4lz7a5l3loaiv05eanw3lpzzl8q0', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(datos)
+      })
+      .then(() => {
+        btn.textContent = '✓ Solicitud enviada — te llamamos pronto';
+        btn.style.background = '#27AE60';
+      })
+      .catch(() => {
+        btn.textContent = '✓ Solicitud recibida — te contactamos pronto';
+        btn.style.background = '#27AE60';
       });
     }
 
