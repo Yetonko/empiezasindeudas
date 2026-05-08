@@ -1083,6 +1083,44 @@
       font-size: 0.78rem; color: rgba(255,255,255,0.4);
     }
 
+
+    /* ── Dropdown Blog ── */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a::after { content: ' ▾'; font-size: 0.7rem; }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #122840;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 8px 0;
+      min-width: 280px;
+      z-index: 9999;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+      margin-top: 8px;
+    }
+    .nav-dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a {
+      display: block;
+      padding: 8px 16px;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.83rem;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: all 0.15s;
+    }
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover { background: rgba(255,255,255,0.08); color: #fff; padding-left: 22px; }
+    .dropdown-divider {
+      padding: 6px 16px 3px;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: rgba(255,255,255,0.3);
+      font-weight: 700;
+    }
   </style>
 </head>
 
@@ -1100,7 +1138,20 @@
           <li><a href="#como-funciona">Cómo funciona</a></li>
           <li><a href="#perfiles">Tu situación</a></li>
           <li><a href="#testimonios">Casos reales</a></li>
-          <li class="nav-dropdown"><a href="/blog.html">Blog ▾</a><div class="dropdown-menu"><div class="dropdown-header">Artículos destacados</div><a href="/que-es-la-ley-de-segunda-oportunidad-y-quien-puede-pedirla.html">¿Qué es la Ley de Segunda Oportunidad?</a><a href="/los-5-requisitos-de-buena-fe-que-exige-el-juez-para-exonerar.html">Los 5 requisitos de buena fe del juez</a><a href="/asnef-y-segunda-oportunidad-que-ocurre-con-tu-fichero-de-mor.html">ASNEF y Segunda Oportunidad</a><a href="/que-bienes-puedo-perder-con-la-segunda-oportunidad-y-cuales-.html">¿Qué bienes puedo perder?</a><a href="/segunda-oportunidad-denegada-motivos-frecuentes-y-como-evita.html">Segunda Oportunidad denegada</a><div class="dropdown-header">Más temas</div><a href="/acuerdo-extrajudicial-de-pagos-la-via-rapida-y-confidencial.html">Acuerdo extrajudicial de pagos</a><a href="/blog.html" style="color:#5BC8F5;font-weight:700;">Ver todos los artículos →</a></div></li>
+          <li class="nav-dropdown">
+            <a href="/blog.html">Blog</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-divider">Artículos destacados</div>
+              <a href="/que-es-la-ley-de-segunda-oportunidad-y-quien-puede-pedirla.html">¿Qué es la Segunda Oportunidad?</a>
+              <a href="/los-5-requisitos-de-buena-fe-que-exige-el-juez-para-exonerar.html">Los 5 requisitos de buena fe</a>
+              <a href="/asnef-y-segunda-oportunidad-que-ocurre-con-tu-fichero-de-mor.html">ASNEF y Segunda Oportunidad</a>
+              <a href="/que-bienes-puedo-perder-con-la-segunda-oportunidad-y-cuales-.html">¿Qué bienes puedo perder?</a>
+              <a href="/segunda-oportunidad-denegada-motivos-frecuentes-y-como-evita.html">Segunda Oportunidad denegada</a>
+              <div class="dropdown-divider">Más temas</div>
+              <a href="/acuerdo-extrajudicial-de-pagos-la-via-rapida-y-confidencial.html">Acuerdo extrajudicial de pagos</a>
+              <a href="/blog.html" style="color:#5BC8F5;font-weight:700;">Ver todos los artículos →</a>
+            </div>
+          </li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
 
@@ -1733,9 +1784,9 @@
           <ul class="footer-links">
             <li><a href="#como-funciona">Cómo funciona</a></li>
             <li><a href="#testimonios">Casos de éxito</a></li>
-            <li class="nav-dropdown"><a href="/blog.html">Blog ▾</a><div class="dropdown-menu"><div class="dropdown-header">Artículos destacados</div><a href="/que-es-la-ley-de-segunda-oportunidad-y-quien-puede-pedirla.html">¿Qué es la Ley de Segunda Oportunidad?</a><a href="/los-5-requisitos-de-buena-fe-que-exige-el-juez-para-exonerar.html">Los 5 requisitos de buena fe del juez</a><a href="/asnef-y-segunda-oportunidad-que-ocurre-con-tu-fichero-de-mor.html">ASNEF y Segunda Oportunidad</a><a href="/que-bienes-puedo-perder-con-la-segunda-oportunidad-y-cuales-.html">¿Qué bienes puedo perder?</a><a href="/segunda-oportunidad-denegada-motivos-frecuentes-y-como-evita.html">Segunda Oportunidad denegada</a><div class="dropdown-header">Más temas</div><a href="/acuerdo-extrajudicial-de-pagos-la-via-rapida-y-confidencial.html">Acuerdo extrajudicial de pagos</a><a href="/blog.html" style="color:#5BC8F5;font-weight:700;">Ver todos los artículos →</a></div></li>
+            <li><a href="/blog.html">Blog</a></li>
           <li><a href="#contacto">Contacto</a></li>
-            <li class="nav-dropdown"><a href="/blog.html">Blog ▾</a><div class="dropdown-menu"><div class="dropdown-header">Artículos destacados</div><a href="/que-es-la-ley-de-segunda-oportunidad-y-quien-puede-pedirla.html">¿Qué es la Ley de Segunda Oportunidad?</a><a href="/los-5-requisitos-de-buena-fe-que-exige-el-juez-para-exonerar.html">Los 5 requisitos de buena fe del juez</a><a href="/asnef-y-segunda-oportunidad-que-ocurre-con-tu-fichero-de-mor.html">ASNEF y Segunda Oportunidad</a><a href="/que-bienes-puedo-perder-con-la-segunda-oportunidad-y-cuales-.html">¿Qué bienes puedo perder?</a><a href="/segunda-oportunidad-denegada-motivos-frecuentes-y-como-evita.html">Segunda Oportunidad denegada</a><div class="dropdown-header">Más temas</div><a href="/acuerdo-extrajudicial-de-pagos-la-via-rapida-y-confidencial.html">Acuerdo extrajudicial de pagos</a><a href="/blog.html" style="color:#5BC8F5;font-weight:700;">Ver todos los artículos →</a></div></li>
+            <li><a href="/blog.html">Blog</a></li>
             <li><a href="#formulario">Diagnóstico gratuito</a></li>
           </ul>
         </div>
