@@ -1084,8 +1084,7 @@
     }
 
 
-    /* ── Dropdown Blog ── */
-    .nav-dropdown { position: relative; }
+    
     .nav-dropdown > a::after { content: ' ▾'; font-size: 0.7rem; }
     .dropdown-menu {
       display: none;
@@ -1138,20 +1137,7 @@
           <li><a href="#como-funciona">Cómo funciona</a></li>
           <li><a href="#perfiles">Tu situación</a></li>
           <li><a href="#testimonios">Casos reales</a></li>
-          <li class="nav-dropdown">
-            <a href="/blog.html">Blog</a>
-            <div class="dropdown-menu">
-              <div class="dropdown-divider">Artículos destacados</div>
-              <a href="/que-es-la-ley-de-segunda-oportunidad-y-quien-puede-pedirla.html">¿Qué es la Segunda Oportunidad?</a>
-              <a href="/los-5-requisitos-de-buena-fe-que-exige-el-juez-para-exonerar.html">Los 5 requisitos de buena fe</a>
-              <a href="/asnef-y-segunda-oportunidad-que-ocurre-con-tu-fichero-de-mor.html">ASNEF y Segunda Oportunidad</a>
-              <a href="/que-bienes-puedo-perder-con-la-segunda-oportunidad-y-cuales-.html">¿Qué bienes puedo perder?</a>
-              <a href="/segunda-oportunidad-denegada-motivos-frecuentes-y-como-evita.html">Segunda Oportunidad denegada</a>
-              <div class="dropdown-divider">Más temas</div>
-              <a href="/acuerdo-extrajudicial-de-pagos-la-via-rapida-y-confidencial.html">Acuerdo extrajudicial de pagos</a>
-              <a href="/blog.html" style="color:#5BC8F5;font-weight:700;">Ver todos los artículos →</a>
-            </div>
-          </li>
+          <li><a href="/blog.html">Blog</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
 
@@ -1513,8 +1499,7 @@
       const container = document.getElementById('csmMessages');
       const div = document.createElement('div');
       div.className = 'csm ' + role;
-      div.innerHTML = '<div class="csm-bubble">' + text.replace(/
-/g, '<br>') + '</div>';
+      div.innerHTML = '<div class="csm-bubble">' + text.replace(/\n/g, '<br>') + '</div>';
       container.appendChild(div);
       container.scrollTop = container.scrollHeight;
     }
@@ -1932,8 +1917,7 @@
       const container = document.getElementById('chatMessages');
       const div = document.createElement('div');
       div.className = 'chat-msg ' + role;
-      div.innerHTML = '<div class="chat-msg-bubble">' + text.replace(/
-/g, '<br>') + '</div>';
+      div.innerHTML = '<div class="chat-msg-bubble">' + text.replace(/\n/g, '<br>') + '</div>';
       container.appendChild(div);
       container.scrollTop = container.scrollHeight;
     }
