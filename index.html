@@ -998,101 +998,89 @@
     .fade-up-delay-2 { animation-delay: 0.2s; }
     .fade-up-delay-3 { animation-delay: 0.3s; }
   
-    /* ═══════════ CHAT WIDGET ═══════════ */
-    .chat-widget {
-      position: fixed; bottom: 28px; right: 28px; z-index: 9999;
-      display: flex; flex-direction: column; align-items: flex-end; gap: 12px;
-    }
-    .chat-bubble-btn {
-      width: 60px; height: 60px; border-radius: 50%;
-      background: var(--green); color: white; border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 20px rgba(39,174,96,0.5);
-      transition: transform 0.2s, box-shadow 0.2s; font-size: 1.6rem;
-    }
-    .chat-bubble-btn:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(39,174,96,0.6); }
-    .chat-panel {
-      display: none; flex-direction: column;
-      width: 360px; height: 520px;
+  
+    /* ═══════════ CHAT SECCIÓN ═══════════ */
+    .chat-section { background: var(--navy); padding: 80px 0; }
+    .chat-section .section-label { color: #5BC8F5; }
+    .chat-section .section-title { color: var(--white); }
+    .chat-section .section-sub { color: rgba(255,255,255,0.65); }
+    .chat-wrapper-section {
+      max-width: 700px; margin: 48px auto 0;
       background: white; border-radius: 16px;
-      box-shadow: 0 16px 60px rgba(0,0,0,0.2);
-      overflow: hidden; border: 1px solid var(--gray-200);
+      overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     }
-    .chat-panel.open { display: flex; }
-    .chat-header {
-      background: var(--navy); padding: 16px 20px;
-      display: flex; align-items: center; justify-content: space-between;
+    .chat-sec-header {
+      background: var(--navy-d); padding: 16px 20px;
+      display: flex; align-items: center; gap: 12px;
     }
-    .chat-header-info { display: flex; align-items: center; gap: 12px; }
-    .chat-header-avatar {
+    .chat-sec-avatar {
       width: 38px; height: 38px; border-radius: 50%;
       background: var(--green); display: flex; align-items: center;
-      justify-content: center; font-weight: 700; color: white; font-size: 0.9rem;
+      justify-content: center; font-weight: 700; color: white; font-size: 0.85rem;
     }
-    .chat-header-text { display: flex; flex-direction: column; }
-    .chat-header-name { color: white; font-weight: 700; font-size: 0.9rem; }
-    .chat-header-status { color: #5eda9a; font-size: 0.75rem; display: flex; align-items: center; gap: 5px; }
-    .chat-header-status::before { content: '●'; font-size: 0.5rem; }
-    .chat-close-btn { background: none; border: none; color: rgba(255,255,255,0.6); cursor: pointer; font-size: 1.2rem; padding: 4px; transition: color 0.2s; }
-    .chat-close-btn:hover { color: white; }
-    .chat-messages {
-      flex: 1; overflow-y: auto; padding: 16px;
-      display: flex; flex-direction: column; gap: 12px;
+    .chat-sec-name { color: white; font-weight: 700; font-size: 0.9rem; }
+    .chat-sec-status { color: #5eda9a; font-size: 0.75rem; }
+    .chat-sec-messages {
+      height: 360px; overflow-y: auto; padding: 20px;
+      display: flex; flex-direction: column; gap: 14px;
       background: var(--gray-50);
     }
-    .chat-msg { display: flex; gap: 8px; max-width: 85%; }
-    .chat-msg.bot { align-self: flex-start; }
-    .chat-msg.user { align-self: flex-end; flex-direction: row-reverse; }
-    .chat-msg-bubble {
-      padding: 10px 14px; border-radius: 14px;
-      font-size: 0.875rem; line-height: 1.55;
+    .csm { display: flex; gap: 10px; max-width: 88%; }
+    .csm.bot { align-self: flex-start; }
+    .csm.user { align-self: flex-end; flex-direction: row-reverse; }
+    .csm-bubble {
+      padding: 11px 16px; border-radius: 14px;
+      font-size: 0.9rem; line-height: 1.6;
     }
-    .chat-msg.bot .chat-msg-bubble {
+    .csm.bot .csm-bubble {
       background: white; border: 1px solid var(--gray-200); color: var(--text);
       border-bottom-left-radius: 4px;
     }
-    .chat-msg.user .chat-msg-bubble {
+    .csm.user .csm-bubble {
       background: var(--navy); color: white;
       border-bottom-right-radius: 4px;
     }
-    .chat-typing {
+    .csm-typing {
       display: none; align-self: flex-start;
       background: white; border: 1px solid var(--gray-200);
-      padding: 10px 16px; border-radius: 14px; border-bottom-left-radius: 4px;
-      gap: 4px; align-items: center;
+      padding: 11px 18px; border-radius: 14px; border-bottom-left-radius: 4px;
+      gap: 5px; align-items: center;
     }
-    .chat-typing.visible { display: flex; }
-    .chat-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gray-500); animation: chatblink 1.3s infinite; }
-    .chat-dot:nth-child(2) { animation-delay: .2s; }
-    .chat-dot:nth-child(3) { animation-delay: .4s; }
-    @keyframes chatblink { 0%,80%,100%{opacity:.2} 40%{opacity:1} }
-    .chat-suggestions { padding: 8px 12px; display: flex; gap: 6px; flex-wrap: wrap; border-top: 1px solid var(--gray-200); background: white; }
-    .chat-sugg-btn {
+    .csm-typing.visible { display: flex; }
+    .csm-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gray-500); animation: csdot 1.3s infinite; }
+    .csm-dot:nth-child(2) { animation-delay: .2s; }
+    .csm-dot:nth-child(3) { animation-delay: .4s; }
+    @keyframes csdot { 0%,80%,100%{opacity:.2} 40%{opacity:1} }
+    .chat-sec-suggestions {
+      padding: 10px 16px; display: flex; gap: 8px; flex-wrap: wrap;
+      border-top: 1px solid var(--gray-200); background: white;
+    }
+    .css-btn {
       background: var(--gray-100); border: 1px solid var(--gray-200); border-radius: 20px;
-      padding: 5px 12px; font-size: 0.75rem; cursor: pointer; color: var(--navy);
+      padding: 6px 14px; font-size: 0.8rem; cursor: pointer; color: var(--navy);
       font-weight: 600; transition: all 0.15s; white-space: nowrap;
     }
-    .chat-sugg-btn:hover { background: var(--navy); color: white; border-color: var(--navy); }
-    .chat-input-area {
-      padding: 12px 16px; border-top: 1px solid var(--gray-200);
-      display: flex; gap: 8px; background: white;
+    .css-btn:hover { background: var(--navy); color: white; border-color: var(--navy); }
+    .chat-sec-input {
+      padding: 14px 16px; border-top: 1px solid var(--gray-200);
+      display: flex; gap: 10px; background: white;
     }
-    .chat-input {
+    .chat-sec-textarea {
       flex: 1; border: 1px solid var(--gray-200); border-radius: 8px;
-      padding: 9px 14px; font-size: 0.875rem; font-family: inherit;
-      outline: none; resize: none; max-height: 80px; transition: border-color 0.2s;
+      padding: 10px 14px; font-size: 0.9rem; font-family: inherit;
+      outline: none; resize: none; max-height: 100px; transition: border-color 0.2s;
     }
-    .chat-input:focus { border-color: var(--blue); }
-    .chat-send-btn {
+    .chat-sec-textarea:focus { border-color: var(--blue); }
+    .chat-sec-send {
       background: var(--green); color: white; border: none;
-      border-radius: 8px; padding: 9px 16px; cursor: pointer;
-      font-size: 1rem; transition: background 0.2s; align-self: flex-end;
+      border-radius: 8px; padding: 10px 20px; cursor: pointer;
+      font-size: 1rem; font-weight: 700; transition: background 0.2s; align-self: flex-end;
     }
-    .chat-send-btn:hover:not(:disabled) { background: #219150; }
-    .chat-send-btn:disabled { opacity: 0.4; cursor: default; }
-    @media(max-width:480px) {
-      .chat-panel { width: calc(100vw - 32px); height: 480px; }
-      .chat-widget { bottom: 16px; right: 16px; }
+    .chat-sec-send:hover:not(:disabled) { background: #219150; }
+    .chat-sec-send:disabled { opacity: 0.4; cursor: default; }
+    .chat-sec-disclaimer {
+      text-align: center; margin-top: 16px;
+      font-size: 0.78rem; color: rgba(255,255,255,0.4);
     }
 
   </style>
@@ -1112,22 +1100,7 @@
           <li><a href="#como-funciona">Cómo funciona</a></li>
           <li><a href="#perfiles">Tu situación</a></li>
           <li><a href="#testimonios">Casos reales</a></li>
-          <li class="nav-dropdown">
-            <a href="/blog.html">Blog</a>
-            <div class="dropdown-menu">
-              <div class="dropdown-header">Artículos destacados</div>
-              <a href="/que-es-la-ley-de-segunda-oportunidad-y-quien-puede-pedirla.html">¿Qué es la Ley de Segunda Oportunidad?</a>
-              <a href="/los-5-requisitos-de-buena-fe-que-exige-el-juez-para-exonerar.html">Los 5 requisitos de buena fe del juez</a>
-              <a href="/asnef-y-segunda-oportunidad-que-ocurre-con-tu-fichero-de-mor.html">ASNEF y Segunda Oportunidad</a>
-              <a href="/que-bienes-puedo-perder-con-la-segunda-oportunidad-y-cuales-.html">¿Qué bienes puedo perder?</a>
-              <a href="/segunda-oportunidad-con-hipoteca-el-articulo-492-bis-trlc-ex.html">Segunda Oportunidad con hipoteca</a>
-              <a href="/segunda-oportunidad-denegada-motivos-frecuentes-y-como-evita.html">Segunda Oportunidad denegada</a>
-              <div class="dropdown-header" style="margin-top:4px;">Más temas</div>
-              <a href="/acuerdo-extrajudicial-de-pagos-la-via-rapida-y-confidencial.html">Acuerdo extrajudicial de pagos</a>
-              <a href="/administrador-de-empresa-cuando-respondo-personalmente-de-la.html">Administrador y responsabilidad personal</a>
-              <a href="/blog.html" style="color:#5BC8F5; font-weight:700; padding-top:10px;">Ver todos los artículos →</a>
-            </div>
-          </li>
+          <li class="nav-dropdown"><a href="/blog.html">Blog ▾</a><div class="dropdown-menu"><div class="dropdown-header">Artículos destacados</div><a href="/que-es-la-ley-de-segunda-oportunidad-y-quien-puede-pedirla.html">¿Qué es la Ley de Segunda Oportunidad?</a><a href="/los-5-requisitos-de-buena-fe-que-exige-el-juez-para-exonerar.html">Los 5 requisitos de buena fe del juez</a><a href="/asnef-y-segunda-oportunidad-que-ocurre-con-tu-fichero-de-mor.html">ASNEF y Segunda Oportunidad</a><a href="/que-bienes-puedo-perder-con-la-segunda-oportunidad-y-cuales-.html">¿Qué bienes puedo perder?</a><a href="/segunda-oportunidad-denegada-motivos-frecuentes-y-como-evita.html">Segunda Oportunidad denegada</a><div class="dropdown-header">Más temas</div><a href="/acuerdo-extrajudicial-de-pagos-la-via-rapida-y-confidencial.html">Acuerdo extrajudicial de pagos</a><a href="/blog.html" style="color:#5BC8F5;font-weight:700;">Ver todos los artículos →</a></div></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
 
@@ -1425,6 +1398,121 @@
     </div>
   </section>
 
+
+  <!-- ═══════════════════════════════════════════
+       CHAT CONSULTA
+  ═══════════════════════════════════════════ -->
+  <section class="chat-section" id="consulta-bot">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Consulta sin compromiso</span>
+        <h2 class="section-title">¿Tienes dudas? Pregúntanos ahora</h2>
+        <p class="section-sub">
+          Nuestro asistente te orienta al instante sobre tus opciones. Sin esperas, sin llamadas,
+          sin compromiso. Disponible 24 horas.
+        </p>
+      </div>
+
+      <div class="chat-wrapper-section">
+        <div class="chat-sec-header">
+          <div class="chat-sec-avatar">ESD</div>
+          <div>
+            <div class="chat-sec-name">Asistente Empieza Sin Deudas</div>
+            <div class="chat-sec-status">● En línea ahora</div>
+          </div>
+        </div>
+
+        <div class="chat-sec-messages" id="csmMessages">
+          <div class="csm bot">
+            <div class="csm-bubble">
+              👋 Hola, soy el asistente de <strong>Empieza Sin Deudas</strong>.<br><br>
+              Puedo orientarte sobre la Ley de Segunda Oportunidad, cómo salir de ASNEF, qué pasa con tus deudas con Hacienda o cualquier otra duda sobre tu situación financiera.<br><br>
+              ¿Cuál es tu caso?
+            </div>
+          </div>
+        </div>
+        <div class="csm-typing" id="csmTyping">
+          <div class="csm-dot"></div><div class="csm-dot"></div><div class="csm-dot"></div>
+        </div>
+
+        <div class="chat-sec-suggestions" id="csmSuggestions">
+          <button class="css-btn" onclick="csmSuggestion(this)">¿Qué es la Segunda Oportunidad?</button>
+          <button class="css-btn" onclick="csmSuggestion(this)">Estoy en ASNEF</button>
+          <button class="css-btn" onclick="csmSuggestion(this)">Deudas con Hacienda</button>
+          <button class="css-btn" onclick="csmSuggestion(this)">Soy autónomo con deudas</button>
+          <button class="css-btn" onclick="csmSuggestion(this)">Tengo hipoteca y otras deudas</button>
+        </div>
+
+        <div class="chat-sec-input">
+          <textarea class="chat-sec-textarea" id="csmInput" rows="1" placeholder="Escribe tu consulta..."
+            onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();csmSend()}"
+            oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
+          <button class="chat-sec-send" id="csmSendBtn" onclick="csmSend()">Enviar →</button>
+        </div>
+      </div>
+      <p class="chat-sec-disclaimer">Las respuestas son orientativas y no constituyen asesoramiento jurídico vinculante.</p>
+    </div>
+  </section>
+
+  <script>
+    const CSM_WORKER = 'https://empiezasindeudas-bot.yetonko.workers.dev';
+    let csmHistory = [];
+
+    function csmAddMsg(text, role) {
+      const container = document.getElementById('csmMessages');
+      const div = document.createElement('div');
+      div.className = 'csm ' + role;
+      div.innerHTML = '<div class="csm-bubble">' + text.replace(/
+/g, '<br>') + '</div>';
+      container.appendChild(div);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function csmSuggestion(btn) {
+      document.getElementById('csmSuggestions').style.display = 'none';
+      csmSendText(btn.textContent);
+    }
+
+    function csmSend() {
+      const input = document.getElementById('csmInput');
+      const text = input.value.trim();
+      if (!text) return;
+      input.value = '';
+      input.style.height = 'auto';
+      document.getElementById('csmSuggestions').style.display = 'none';
+      csmSendText(text);
+    }
+
+    async function csmSendText(text) {
+      csmAddMsg(text, 'user');
+      csmHistory.push({ role: 'user', content: text });
+
+      const btn = document.getElementById('csmSendBtn');
+      const typing = document.getElementById('csmTyping');
+      btn.disabled = true;
+      typing.classList.add('visible');
+      document.getElementById('csmMessages').scrollTop = document.getElementById('csmMessages').scrollHeight;
+
+      try {
+        const res = await fetch(CSM_WORKER, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ messages: csmHistory })
+        });
+        const data = await res.json();
+        const reply = data.reply || 'Lo siento, ha habido un error. Inténtalo de nuevo.';
+        csmHistory.push({ role: 'assistant', content: reply });
+        typing.classList.remove('visible');
+        csmAddMsg(reply, 'bot');
+      } catch(e) {
+        typing.classList.remove('visible');
+        csmAddMsg('Ha habido un error de conexión. Por favor, inténtalo de nuevo.', 'bot');
+      } finally {
+        btn.disabled = false;
+      }
+    }
+  </script>
+
   <!-- ═══════════════════════════════════════════
        TESTIMONIOS
   ═══════════════════════════════════════════ -->
@@ -1645,39 +1733,9 @@
           <ul class="footer-links">
             <li><a href="#como-funciona">Cómo funciona</a></li>
             <li><a href="#testimonios">Casos de éxito</a></li>
-            <li class="nav-dropdown">
-            <a href="/blog.html">Blog</a>
-            <div class="dropdown-menu">
-              <div class="dropdown-header">Artículos destacados</div>
-              <a href="/que-es-la-ley-de-segunda-oportunidad-y-quien-puede-pedirla.html">¿Qué es la Ley de Segunda Oportunidad?</a>
-              <a href="/los-5-requisitos-de-buena-fe-que-exige-el-juez-para-exonerar.html">Los 5 requisitos de buena fe del juez</a>
-              <a href="/asnef-y-segunda-oportunidad-que-ocurre-con-tu-fichero-de-mor.html">ASNEF y Segunda Oportunidad</a>
-              <a href="/que-bienes-puedo-perder-con-la-segunda-oportunidad-y-cuales-.html">¿Qué bienes puedo perder?</a>
-              <a href="/segunda-oportunidad-con-hipoteca-el-articulo-492-bis-trlc-ex.html">Segunda Oportunidad con hipoteca</a>
-              <a href="/segunda-oportunidad-denegada-motivos-frecuentes-y-como-evita.html">Segunda Oportunidad denegada</a>
-              <div class="dropdown-header" style="margin-top:4px;">Más temas</div>
-              <a href="/acuerdo-extrajudicial-de-pagos-la-via-rapida-y-confidencial.html">Acuerdo extrajudicial de pagos</a>
-              <a href="/administrador-de-empresa-cuando-respondo-personalmente-de-la.html">Administrador y responsabilidad personal</a>
-              <a href="/blog.html" style="color:#5BC8F5; font-weight:700; padding-top:10px;">Ver todos los artículos →</a>
-            </div>
-          </li>
+            <li class="nav-dropdown"><a href="/blog.html">Blog ▾</a><div class="dropdown-menu"><div class="dropdown-header">Artículos destacados</div><a href="/que-es-la-ley-de-segunda-oportunidad-y-quien-puede-pedirla.html">¿Qué es la Ley de Segunda Oportunidad?</a><a href="/los-5-requisitos-de-buena-fe-que-exige-el-juez-para-exonerar.html">Los 5 requisitos de buena fe del juez</a><a href="/asnef-y-segunda-oportunidad-que-ocurre-con-tu-fichero-de-mor.html">ASNEF y Segunda Oportunidad</a><a href="/que-bienes-puedo-perder-con-la-segunda-oportunidad-y-cuales-.html">¿Qué bienes puedo perder?</a><a href="/segunda-oportunidad-denegada-motivos-frecuentes-y-como-evita.html">Segunda Oportunidad denegada</a><div class="dropdown-header">Más temas</div><a href="/acuerdo-extrajudicial-de-pagos-la-via-rapida-y-confidencial.html">Acuerdo extrajudicial de pagos</a><a href="/blog.html" style="color:#5BC8F5;font-weight:700;">Ver todos los artículos →</a></div></li>
           <li><a href="#contacto">Contacto</a></li>
-            <li class="nav-dropdown">
-            <a href="/blog.html">Blog</a>
-            <div class="dropdown-menu">
-              <div class="dropdown-header">Artículos destacados</div>
-              <a href="/que-es-la-ley-de-segunda-oportunidad-y-quien-puede-pedirla.html">¿Qué es la Ley de Segunda Oportunidad?</a>
-              <a href="/los-5-requisitos-de-buena-fe-que-exige-el-juez-para-exonerar.html">Los 5 requisitos de buena fe del juez</a>
-              <a href="/asnef-y-segunda-oportunidad-que-ocurre-con-tu-fichero-de-mor.html">ASNEF y Segunda Oportunidad</a>
-              <a href="/que-bienes-puedo-perder-con-la-segunda-oportunidad-y-cuales-.html">¿Qué bienes puedo perder?</a>
-              <a href="/segunda-oportunidad-con-hipoteca-el-articulo-492-bis-trlc-ex.html">Segunda Oportunidad con hipoteca</a>
-              <a href="/segunda-oportunidad-denegada-motivos-frecuentes-y-como-evita.html">Segunda Oportunidad denegada</a>
-              <div class="dropdown-header" style="margin-top:4px;">Más temas</div>
-              <a href="/acuerdo-extrajudicial-de-pagos-la-via-rapida-y-confidencial.html">Acuerdo extrajudicial de pagos</a>
-              <a href="/administrador-de-empresa-cuando-respondo-personalmente-de-la.html">Administrador y responsabilidad personal</a>
-              <a href="/blog.html" style="color:#5BC8F5; font-weight:700; padding-top:10px;">Ver todos los artículos →</a>
-            </div>
-          </li>
+            <li class="nav-dropdown"><a href="/blog.html">Blog ▾</a><div class="dropdown-menu"><div class="dropdown-header">Artículos destacados</div><a href="/que-es-la-ley-de-segunda-oportunidad-y-quien-puede-pedirla.html">¿Qué es la Ley de Segunda Oportunidad?</a><a href="/los-5-requisitos-de-buena-fe-que-exige-el-juez-para-exonerar.html">Los 5 requisitos de buena fe del juez</a><a href="/asnef-y-segunda-oportunidad-que-ocurre-con-tu-fichero-de-mor.html">ASNEF y Segunda Oportunidad</a><a href="/que-bienes-puedo-perder-con-la-segunda-oportunidad-y-cuales-.html">¿Qué bienes puedo perder?</a><a href="/segunda-oportunidad-denegada-motivos-frecuentes-y-como-evita.html">Segunda Oportunidad denegada</a><div class="dropdown-header">Más temas</div><a href="/acuerdo-extrajudicial-de-pagos-la-via-rapida-y-confidencial.html">Acuerdo extrajudicial de pagos</a><a href="/blog.html" style="color:#5BC8F5;font-weight:700;">Ver todos los artículos →</a></div></li>
             <li><a href="#formulario">Diagnóstico gratuito</a></li>
           </ul>
         </div>
