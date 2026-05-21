@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Empieza Sin Deudas</title>
+  <meta name="description" content="Artículos sobre Segunda Oportunidad, cancelación de deudas, ASNEF y soluciones financieras para recuperar tu libertad económica." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://empiezasindeudas.com/blog.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1B3A5C; --navy-d: #122840; --blue: #2E75B6; --blue-l: #D5E8F7;
+      --green: #27AE60; --white: #FFFFFF; --gray-50: #F8FAFC; --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0; --gray-500: #64748B; --gray-700: #334155; --text: #1A1A2E;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    .navbar { background: var(--navy); padding: 0 24px; position: sticky; top: 0; z-index: 100; }
+    .navbar-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .navbar-logo { font-weight: 800; font-size: 1.25rem; color: var(--white); letter-spacing: -0.5px; }
+    .navbar-logo span { color: #5BC8F5; }
+    .navbar-links { display: flex; list-style: none; gap: 32px; }
+    .navbar-links a { color: rgba(255,255,255,0.8); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .navbar-links a:hover, .navbar-links a.active { color: var(--white); }
+    .navbar-cta { background: var(--green); color: var(--white); padding: 10px 20px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; transition: all 0.2s; }
+    .navbar-cta:hover { background: #219150; }
+    @media(max-width:768px) { .navbar-links { display: none; } }
+
+    /* HERO */
+    .blog-hero { background: linear-gradient(135deg, var(--navy-d) 0%, var(--navy) 100%); padding: 64px 24px 48px; text-align: center; }
+    .blog-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--white); font-weight: 800; margin-bottom: 12px; }
+    .blog-hero p { color: rgba(255,255,255,0.75); font-size: 1.05rem; max-width: 560px; margin: 0 auto; }
+
+    /* GRID */
+    .blog-section { padding: 64px 24px; background: var(--gray-50); }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px; max-width: 1100px; margin: 0 auto; }
+    .blog-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 16px rgba(27,58,92,0.08); transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(27,58,92,0.14); }
+    .card-tag { background: var(--blue-l); color: var(--blue); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; display: inline-block; }
+    .card-body { padding: 20px 24px 24px; flex: 1; display: flex; flex-direction: column; }
+    .card-body h2 { font-size: 1rem; font-weight: 700; color: var(--navy); line-height: 1.4; margin-bottom: 10px; }
+    .card-body p { font-size: 0.88rem; color: var(--gray-500); line-height: 1.6; flex: 1; margin-bottom: 18px; }
+    .card-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 700; color: var(--blue); transition: gap 0.2s; }
+    .card-link:hover { gap: 10px; }
+
+    /* CTA */
+    .blog-cta { background: var(--navy); padding: 56px 24px; text-align: center; }
+    .blog-cta h2 { color: var(--white); font-size: 1.6rem; font-weight: 800; margin-bottom: 12px; }
+    .blog-cta p { color: rgba(255,255,255,0.7); margin-bottom: 28px; }
+    .btn-green { background: var(--green); color: var(--white); padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 1rem; display: inline-block; transition: all 0.2s; }
+    .btn-green:hover { background: #219150; transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer { background: var(--navy-d); color: rgba(255,255,255,0.5); text-align: center; padding: 24px; font-size: 0.85rem; }
+    footer a { color: rgba(255,255,255,0.6); margin: 0 8px; }
+    footer a:hover { color: var(--white); }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="/" class="navbar-logo">Empieza<span>Sin</span>Deudas</a>
+    <ul class="navbar-links">
+      <li><a href="/#como-funciona">Cómo funciona</a></li>
+      <li><a href="/#perfiles">Tu situación</a></li>
+      <li><a href="/#testimonios">Casos reales</a></li>
+      <li><a href="/blog.html" class="active">Blog</a></li>
+      <li><a href="/#contacto">Contacto</a></li>
+    </ul>
+    <a href="/#contacto" class="navbar-cta">Diagnóstico gratuito</a>
+  </div>
+</nav>
+
+<div class="blog-hero">
+  <h1>Blog sobre Segunda Oportunidad</h1>
+  <p>Guías y artículos para entender tus opciones, cancelar deudas y recuperar tu libertad financiera.</p>
+</div>
+
+<section class="blog-section">
+  <div class="blog-grid">
+
+    <a href="/ley-de-segunda-oportunidad-guia-completa-2026.html" class="blog-card" style="border:2px solid #b8963e">
+      <span class="card-tag" style="background:#b8963e;color:#fff">⭐ Guía Pilar</span>
+      <div class="card-body">
+        <h2>Ley de Segunda Oportunidad: Guía Completa 2026</h2>
+        <p>La guía definitiva: requisitos, deudas exonerables, fases, plazos, coste y casos reales. Todo lo que necesitas saber para empezar tu segunda oportunidad.</p>
+        <span class="card-link">Leer guía completa →</span>
+      </div>
+    </a>
+
+    <a href="/que-es-la-ley-de-segunda-oportunidad-y-quien-puede-pedirla.html" class="blog-card">
+      <span class="card-tag">Segunda Oportunidad</span>
+      <div class="card-body">
+        <h2>¿Qué es la Ley de Segunda Oportunidad y quién puede pedirla?</h2>
+        <p>Todo lo que necesitas saber sobre este mecanismo legal que permite cancelar tus deudas definitivamente y empezar de cero.</p>
+        <span class="card-link">Leer artículo →</span>
+      </div>
+    </a>
+
+    <a href="/los-5-requisitos-de-buena-fe-que-exige-el-juez-para-exonerar.html" class="blog-card">
+      <span class="card-tag">Segunda Oportunidad</span>
+      <div class="card-body">
+        <h2>Los 5 requisitos de buena fe que exige el juez para exonerar tus deudas</h2>
+        <p>Qué condiciones debes cumplir para que el juez apruebe la cancelación de tus deudas y qué evitar para no perder el proceso.</p>
+        <span class="card-link">Leer artículo →</span>
+      </div>
+    </a>
+
+    <a href="/que-bienes-puedo-perder-con-la-segunda-oportunidad-y-cuales-.html" class="blog-card">
+      <span class="card-tag">Segunda Oportunidad</span>
+      <div class="card-body">
+        <h2>Qué bienes puedo perder con la Segunda Oportunidad y cuáles quedan protegidos</h2>
+        <p>Qué ocurre con tu coche, tu casa o tus ahorros cuando te acoges al proceso. Todo lo que está protegido por ley.</p>
+        <span class="card-link">Leer artículo →</span>
+      </div>
+    </a>
+
+    <a href="/segunda-oportunidad-denegada-motivos-frecuentes-y-como-evita.html" class="blog-card">
+      <span class="card-tag">Segunda Oportunidad</span>
+      <div class="card-body">
+        <h2>Segunda Oportunidad denegada: motivos frecuentes y cómo evitarlos</h2>
+        <p>Los errores más habituales que llevan al juez a denegar la exoneración, y cómo evitarlos con una buena preparación.</p>
+        <span class="card-link">Leer artículo →</span>
+      </div>
+    </a>
+
+    <a href="/limitaciones-que-deudas-nunca-se-pueden-exonerar-con-la-segu.html" class="blog-card">
+      <span class="card-tag">Segunda Oportunidad</span>
+      <div class="card-body">
+        <h2>Limitaciones: qué deudas nunca se pueden exonerar con la Segunda Oportunidad</h2>
+        <p>Hacienda, pensiones alimenticias, multas penales... no todas las deudas desaparecen. Conoce los límites reales de la ley.</p>
+        <span class="card-link">Leer artículo →</span>
+      </div>
+    </a>
+
+    <a href="/asnef-y-segunda-oportunidad-que-ocurre-con-tu-fichero-de-mor.html" class="blog-card">
+      <span class="card-tag">ASNEF</span>
+      <div class="card-body">
+        <h2>ASNEF y Segunda Oportunidad: qué ocurre con tu fichero de morosos</h2>
+        <p>Cómo afecta estar en ASNEF al proceso de Segunda Oportunidad y qué pasa con tu historial una vez obtenida la exoneración.</p>
+        <span class="card-link">Leer artículo →</span>
+      </div>
+    </a>
+
+    <a href="/que-pasa-con-mi-coche-si-me-acojo-a-la-segunda-oportunidad.html" class="blog-card">
+      <span class="card-tag">Segunda Oportunidad</span>
+      <div class="card-body">
+        <h2>¿Qué pasa con mi coche si me acojo a la Segunda Oportunidad?</h2>
+        <p>Si necesitas el vehículo para trabajar o para tu vida cotidiana, esta guía te explica qué protecciones existen y cuándo pueden ejecutarlo.</p>
+        <span class="card-link">Leer artículo →</span>
+      </div>
+    </a>
+
+    <a href="/segunda-oportunidad-con-hipoteca-el-articulo-492-bis-trlc-ex.html" class="blog-card">
+      <span class="card-tag">Hipoteca</span>
+      <div class="card-body">
+        <h2>Segunda Oportunidad con hipoteca: el artículo 492 bis TRLC explicado</h2>
+        <p>Tienes hipoteca y deudas. La ley permite una solución específica para este caso. Te explicamos cómo funciona en lenguaje claro.</p>
+        <span class="card-link">Leer artículo →</span>
+      </div>
+    </a>
+
+    <a href="/concurso-voluntario-vs-concurso-necesario-diferencias-clave.html" class="blog-card">
+      <span class="card-tag">Concurso</span>
+      <div class="card-body">
+        <h2>Concurso voluntario vs. concurso necesario: diferencias clave</h2>
+        <p>Dos vías distintas para acceder al proceso concursal. Te explicamos cuál te conviene, cuándo debes actuar y qué pasa si no lo haces.</p>
+        <span class="card-link">Leer artículo →</span>
+      </div>
+    </a>
+
+    <a href="/puedo-seguir-cobrando-mi-nomina-durante-el-concurso-de-acree.html" class="blog-card">
+      <span class="card-tag">Concurso</span>
+      <div class="card-body">
+        <h2>¿Puedo seguir cobrando mi nómina durante el concurso de acreedores?</h2>
+        <p>Una de las preguntas más frecuentes. La respuesta es sí, con matices. Te explicamos qué protege la ley durante el proceso.</p>
+        <span class="card-link">Leer artículo →</span>
+      </div>
+    </a>
+
+    <a href="/acuerdo-extrajudicial-de-pagos-la-via-rapida-y-confidencial.html" class="blog-card">
+      <span class="card-tag">Alternativas</span>
+      <div class="card-body">
+        <h2>Acuerdo extrajudicial de pagos: la vía rápida y confidencial</h2>
+        <p>Antes del concurso existe esta alternativa más ágil y privada. Ideal para autónomos y personas con deudas manejables. Así funciona.</p>
+        <span class="card-link">Leer artículo →</span>
+      </div>
+    </a>
+
+    <a href="/administrador-de-empresa-cuando-respondo-personalmente-de-la.html" class="blog-card">
+      <span class="card-tag">Empresas</span>
+      <div class="card-body">
+        <h2>Administrador de empresa: cuándo respondo personalmente de las deudas</h2>
+        <p>Si eres administrador de una SL con deudas, puede que respondas con tu patrimonio personal. Conoce los límites y cómo protegerte.</p>
+        <span class="card-link">Leer artículo →</span>
+      </div>
+    </a>
+
+    <a href="/concurso-de-acreedores-persona-fisica-autonomo-guia-completa.html" class="blog-card">
+      <span class="card-tag">Concurso</span>
+      <div class="card-body">
+        <h2>Concurso de acreedores para persona física y autónomo: guía completa</h2>
+        <p>Qué es, cómo se solicita, fases, plazos y cómo acaba con la exoneración del pasivo insatisfecho. La guía definitiva para entender el proceso.</p>
+        <span class="card-link">Leer artículo →</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="blog-cta">
+  <h2>¿Tu situación encaja con alguno de estos casos?</h2>
+  <p>Analizamos tu caso de forma gratuita y sin compromiso. Una consulta puede cambiar tu situación financiera.</p>
+  <a href="/#contacto" class="btn-green">Solicitar diagnóstico gratuito →</a>
+</section>
+
+<footer>
+  <p>© 2026 EmpiezaSinDeudas ·
+    <a href="/privacidad.html">Privacidad</a> ·
+    <a href="/aviso-legal.html">Aviso Legal</a> ·
+    <a href="/cookies.html">Cookies</a>
+  </p>
+</footer>
+
+</body>
+</html>
