@@ -3,7 +3,7 @@
 
   <url>
     <loc>https://www.empiezasindeudas.com/</loc>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
@@ -86,33 +86,15 @@
   </url>
 
   <url>
-    <loc>https://www.empiezasindeudas.com/privacidad.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <url>
-    <loc>https://www.empiezasindeudas.com/aviso-legal.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <url>
-    <loc>https://www.empiezasindeudas.com/cookies.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://www.empiezasindeudas.com/deudas-derivadas-hacienda-seguridad-social-exonerables-segunda-oportunidad.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.empiezasindeudas.com/concurso-de-acreedores-persona-fisica-autonomo-guia-completa.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.empiezasindeudas.com/ley-de-segunda-oportunidad-guia-completa-2026.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
   </url>
 
 </urlset>

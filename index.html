@@ -6,6 +6,20 @@
   <meta name="description" content="¿Tienes deudas, estás en ASNEF o te han denegado un préstamo? Te ayudamos a recuperar tu situación financiera. Diagnóstico gratuito y confidencial." />
   <title>Empieza Sin Deudas | Segunda Oportunidad Financiera</title>
   <meta name="google-site-verification" content="5oETiDTJ807xCBOgVzbUtX7hr7x_YKxiDsgaWJ0W3e8" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.empiezasindeudas.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.empiezasindeudas.com/" />
+  <meta property="og:title" content="Empieza Sin Deudas | Segunda Oportunidad Financiera" />
+  <meta property="og:description" content="¿Tienes deudas, estás en ASNEF o te han denegado un préstamo? Te ayudamos a recuperar tu situación financiera. Diagnóstico gratuito y confidencial." />
+  <meta property="og:locale" content="es_ES" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Empieza Sin Deudas | Segunda Oportunidad Financiera" />
+  <meta name="twitter:description" content="¿Tienes deudas, estás en ASNEF o te han denegado un préstamo? Te ayudamos a recuperar tu situación financiera. Diagnóstico gratuito y confidencial." />
 
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TZBVVZB8W9"></script>
@@ -1644,6 +1658,8 @@
           <p class="form-box-sub">Rellena el formulario y te llamamos sin coste ni compromiso</p>
 
           <form id="contactForm" onsubmit="handleSubmit(event)">
+            <!-- Honeypot antispam: oculto para humanos, los bots lo rellenan -->
+            <input type="text" id="hp_website" name="website" style="display:none !important" tabindex="-1" autocomplete="off" />
             <div class="form-row">
               <div class="form-group">
                 <label for="nombre">Nombre <span>*</span></label>
@@ -1808,6 +1824,9 @@
           .join('\n\n');
         mensajeTexto = (mensajeTexto ? mensajeTexto + '\n\n' : '') + '[Chat previo]\n' + resumenChat;
       }
+
+      // Honeypot antispam: si el campo trampa tiene valor, es un bot
+      if (document.getElementById('hp_website').value) return;
 
       const datos = {
         nombre: document.getElementById('nombre').value,
