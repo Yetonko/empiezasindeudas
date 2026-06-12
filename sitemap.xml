@@ -97,4 +97,22 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://www.empiezasindeudas.com/diferencia-entre-suspension-de-pagos-y-concurso-de-acreedores.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.empiezasindeudas.com/exoneracion-provisional-y-definitiva-que-cambia-en-los-5-ano.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.empiezasindeudas.com/prescripcion-deudas-cuando-caduca-la-deuda.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
