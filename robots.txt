@@ -3,5 +3,7 @@ Allow: /
 Disallow: /privacidad.html
 Disallow: /aviso-legal.html
 Disallow: /cookies.html
+Disallow: /ley-de-segunda-oportunidad-guia-completa-2026.html
+Disallow: /blog%20(1).html
 
 Sitemap: https://www.empiezasindeudas.com/sitemap.xml
